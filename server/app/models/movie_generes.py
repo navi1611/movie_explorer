@@ -1,0 +1,9 @@
+from sqlalchemy import Table, Column, Integer, ForeignKey
+from app.core.database import Base
+
+movies_genres = Table(
+    "movies_genres",
+    Base.metadata,
+    Column("movie_id", Integer, ForeignKey("movies.id", ondelete="CASCADE"), primary_key=True),
+    Column("genre_id", Integer, ForeignKey("genres.id", ondelete="CASCADE"), primary_key=True),
+)

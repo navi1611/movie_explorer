@@ -2,7 +2,7 @@ from fastapi import  HTTPException
 from sqlalchemy.orm import Session, joinedload
 from app.models import Movie, Director, Genre, movies_genres, MovieActor, Actor
 
-def get_movies(db: Session):
+def get_movies_service(db: Session):
     movies = db.query(Movie).all()
     return movies
 

@@ -1,9 +1,11 @@
+from __future__ import annotations
+
 from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from app.schemas.movie_actor import MovieActorResponse
+    from app.schemas.movie_actor import MovieActorResponse, MovieActorWithMovie
 
 
 class ActorBase(BaseModel):
@@ -36,7 +38,7 @@ class ActorResponse(ActorBase):
 
 class ActorWithMovies(ActorResponse):
     """ Actor with movie relationships"""
-    movie_actors: list["MovieActorResponse"] = []
+    movie_actors: list["MovieActorWithMovie"] = []
 
     class Config:
         from_attributes = True

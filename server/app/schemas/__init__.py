@@ -35,16 +35,18 @@ from app.schemas.movie_actor import (
     MovieActorUpdate,
     MovieActorResponse,
     MovieActorWithDetails,
+    MovieActorWithMovie,
 )
 
-ActorWithMovies.model_rebuild()
-DirectorWithMovies.model_rebuild()
-GenreWithMovies.model_rebuild()
+MovieActorWithDetails.model_rebuild()
 MovieWithDirector.model_rebuild()
 MovieWithGenres.model_rebuild()
 MovieWithActors.model_rebuild()
 MovieDetail.model_rebuild()
-MovieActorWithDetails.model_rebuild()
+MovieActorWithMovie.model_rebuild()
+ActorWithMovies.model_rebuild()
+DirectorWithMovies.model_rebuild()
+GenreWithMovies.model_rebuild()
 
 __all__ = [
     # Actor
@@ -80,5 +82,6 @@ __all__ = [
     "MovieActorUpdate",
     "MovieActorResponse",
     "MovieActorWithDetails",
+    "MovieActorWithMovie",
 ]
 
